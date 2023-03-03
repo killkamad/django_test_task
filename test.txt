@@ -1,1 +1,71 @@
 dadafaaafawafawfawawfrffafawwfwafawawfawawawfwfawfafawfawfawwaffaw
+python -m gitautodeploy --config config.json --allow-root-user
+
+
+
+
+
+
+
+
+@reboot /usr/bin/python -m /Git-Auto-Deploy/gitautodeploy --daemon-mode --quiet --config /Git-Auto-Deploy/config.json --allow-root-user
+
+
+{
+  // HTTP server options
+  //"http-enabled": true,
+  //"http-host": "0.0.0.0",
+  //"http-port": 8001,
+
+  // HTTPS server options
+  //"https-enabled": false,
+  //"https-host": "0.0.0.0",
+  //"https-port": 8002,
+
+  // Web socket server options (used by web UI for real time updates)
+  //"wss-enabled": false,
+  //"wss-host": "0.0.0.0",
+  //"wss-port": 8003,
+
+  // Web user interface options
+  //"web-ui-enabled": false,
+  //"web-ui-username": null,
+  //"web-ui-password": null,
+  //"web-ui-whitelist": ["127.0.0.1"],
+
+  // TLS/SSL cert (necessary for HTTPS and web socket server to work)
+  //"ssl-key": null,  // If specified, holds the private key
+  //"ssl-cert": "cert.pem",  // Holds the public key or both the private and public keys
+
+  // File to store a copy of the console output
+  "log-file": "~/gitautodeploy.log",
+
+  // File to store the process id (pid)
+  "pid-file": "~/.gitautodeploy.pid",
+
+  // Record all log levels by default
+  "log-level": "INFO",
+
+  // Deploy commands that should be executed for all projects
+  //"global_deploy": [
+  //  "echo Deploy started!",
+  //  "echo Deploy completed!"
+  //],
+
+  "repositories": [
+    {
+      "url": "https://github.com/killkamad/django_test_task.git",
+      "branch": "master",
+      "remote": "origin",
+      "path": "/var/www/django_test_task",
+      "deploy": "/var/www/deploy.sh",
+      "send_notify_email": true,
+      "smtp_server": "smtp.gmail.com",
+      "smtp_port": "465",
+      "smtp_login": "killkakillka1@gmail.com",
+      "smtp_password": "pass",
+      "smtp_to": ["killkakillka1@gmail.com"],
+      "smtp_from": "killkakillka1@gmail.com"
+    }
+  ]
+}
