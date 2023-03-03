@@ -1,4 +1,3 @@
-dadafaaafawafawfawawfrffafawwfwafawawfawawawfwfawfafawfawfawwaffaw
 python -m gitautodeploy --config config.json --allow-root-user
 
 
